@@ -18,7 +18,26 @@ Backbone application created for training and some JS examples
 
 
 #[/app](http://localhost:8000/app) 
-Nasza mała aplikacja backbonowa
+Nasza mała aplikacja backbone'owa
+
+### Cele *
+
+1. Rozwiązać typowe problemy UI
+	- Pokazać animowany region: widok listy -> widok szczegółowy rekordu
+	- prosty formularz z walidacją
+	- wymiana 2 różnych widoków
+	- nawigacja
+	- redundancja CSS
+	
+
+2. Rozwiązać problemy techniczne
+	- modularna konstrukcja aplikacji
+	- asynchroniczne ładowanie danych
+	- komunikacja między różnymi elementami aplikacji
+	- testy
+	- optymalizacja kodu produkcyjnego
+
+\* Tworzenie aplikacji zaczynając od celów technicznych zamiast użytkowych nie jest dobrym planem... :(
 
 #[/examples](http://localhost:8000/examples) 
 Różne przykłady javascriptowe
