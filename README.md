@@ -39,5 +39,14 @@ Nasza mała aplikacja backbone'owa
 
 \* Tworzenie aplikacji zaczynając od celów technicznych zamiast użytkowych nie jest dobrym planem... :(
 
+### Użyte biblioteki
+1. [RequireJS](http://requirejs.org/)
+2. [jQuery](http://jquery.com/)
+3. [Underscore.js](http://underscorejs.org/)
+4. [Backbone.js](http://backbonejs.org/)
+5. [Backbone.Marionette](http://marionettejs.com/)
+6. [backbone-forms](https://github.com/powmedia/backbone-forms)
+
+
 #[/examples](http://localhost:8000/examples) 
 Różne przykłady javascriptowe
