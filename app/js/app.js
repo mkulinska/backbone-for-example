@@ -5,9 +5,9 @@ define(["jquery", "underscore", "backbone","backbone.marionette"], function ($, 
 
 	var app = new Backbone.Marionette.Application();
 
-	app.start = function () {
+	app.on("initialize:test", function () {
 		$("#root").html("działa");
-	};
+	});
 
 	return app;
 });

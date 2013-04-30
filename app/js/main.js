@@ -27,7 +27,7 @@
 	require(["jquery", "app", "underscore", "backbone"], function($, app) {
 	    // do something when everything is loaded
 	    $(function() {
-	        app.start();
+	        app.trigger("initialize:test");
 	    });
 	});
 
