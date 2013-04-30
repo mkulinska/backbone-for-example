@@ -50,3 +50,8 @@ Nasza mała aplikacja backbone'owa
 
 #[/examples](http://localhost:8000/examples) 
 Różne przykłady javascriptowe
+
+
+- [use_strict](http://localhost:8000/exaples/use_strict.html) 
+ 	- przykład pokazuje w jaki sposób "use strict"; nie pozwala nadpisać zmiennych globalnych 
+ 	
