@@ -37,4 +37,4 @@
 
   });
 
-})(requirejs,require)
+})(requirejs,require);
