@@ -9,7 +9,7 @@
 	        'backbone': {
 	            //These script dependencies should be loaded before loading
 	            //backbone.js
-	            deps: ['underscore', 'jquery'],
+            deps: ['underscore', 'jquery'],
 	            //Once loaded, use the global 'Backbone' as the
 	            //module value.
 	            exports: 'Backbone'
@@ -24,11 +24,17 @@
 	    }
 	});
 
-	require(["jquery", "app", "underscore", "backbone"], function($, app) {
-	    // do something when everything is loaded
-	    $(function() {
-	        app.trigger("initialize:test");
-	    });
-	});
+
+  require(['app','backbone','router','controller'],function(app,Backbone,Router,Controller){
+
+    app.start();
+
+    //new Router({
+    //  controller : Controller
+    //});
+
+    //Backbone.history.start();
+
+  });
 
 })(requirejs,require)
