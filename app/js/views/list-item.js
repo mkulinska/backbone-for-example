@@ -4,9 +4,22 @@ define(['backbone.marionette'], function (Marionette) {
   return Marionette.CompositeView.extend({
     tagName : 'li',
 
+
     template: function (model) {
       return "nasz rand: " + model.rand ;
+    },
+
+    events: {
+      click: 'alert'
+
+    },
+
+
+    alert: function () {
+      alert(this.model.get('rand')) ;
+
     }
+
 
   });
 });
