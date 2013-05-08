@@ -6,7 +6,7 @@ define(['backbone.marionette'], function (Marionette) {
 
 
     template: function (model) {
-      return "nasz rand: " + model.rand ;
+      return "subtitle: " + model.subtitle + " title: " + model.title + " nasz rand: " + model.rand ;
     },
 
     events: {
