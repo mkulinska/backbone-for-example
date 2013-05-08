@@ -5,6 +5,13 @@
 	"use strict";
 
 	requirejs.config({
+        paths : {
+            underscore : 'libs/underscore',
+            backbone   : 'libs/backbone',
+            marionette : 'libs/backbone.marionette',
+            jquery     : 'libs/jquery',
+           // tpl        : 'lib/tpl'
+        },
 	    shim: {
 	        'backbone': {
 	            //These script dependencies should be loaded before loading
@@ -17,7 +24,7 @@
 	        'underscore': {
 	            exports: '_'
 	        },
-	        'backbone.marionette': {
+	        'marionette': {
 	            deps: ['backbone'],
 	            exports: 'Backbone.Marionette'
 	        }

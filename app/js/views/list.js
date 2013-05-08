@@ -1,5 +1,5 @@
-define(["backbone.marionette", "collections/list", "views/list-item"],
-      function (marionette, Collection, ItemView){
+define(["marionette", "collections/list", "views/list-item"],
+      function (Marionette, Collection, ItemView){
         'use strict';
         return Marionette.CompositeView.extend({
 

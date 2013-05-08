@@ -1,11 +1,11 @@
 
-define(["jquery", "underscore", "backbone","backbone.marionette", "views/list"],
-       function ($, _, Backbone, marionette, List) {
+define(["marionette", "views/list"],
+       function ( Marionette, List) {
 
          "use strict";
 
 
-	     var app = new Backbone.Marionette.Application();
+	     var app = new Marionette.Application();
 
          app.addRegions({ "region_list": "#root"});
 

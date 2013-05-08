@@ -1,4 +1,4 @@
-define(['backbone.marionette'], function (Marionette) {
+define(['marionette'], function (Marionette) {
   'use strict';
 
   return Marionette.CompositeView.extend({
