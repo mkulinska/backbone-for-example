@@ -1,13 +1,18 @@
-"use strict";
 
-define(["jquery", "underscore", "backbone","backbone.marionette"], function ($, _, Backbone) {
+define(["marionette", "views/list"],
+       function ( Marionette, List) {
+
+         "use strict";
 
 
-	var app = new Backbone.Marionette.Application();
+	     var app = new Marionette.Application();
 
-	app.on("initialize:test", function () {
-		$("#root").html("działa");
-	});
+         app.addRegions({ "region_list": "#root"});
 
-	return app;
-});
+         app.addInitializer(function(){
+           this.region_list.show(new List);
+         });
+
+
+	     return app;
+       });
