@@ -17,10 +17,12 @@ define(["marionette", "collections/list", "views/list-item"],
 
           //itemViewContainer: this.$el,
 
-          collection: new Collection ([
-            {title: "aaa", subtitle: "bbbb"},
-            {title: "ccc", subtitle: "ddd"},
-            {},
-            {title: "eee", subtitle: "fff"}])
+          collection: new Collection (),
+
+          initialize: function () {
+            this.collection.on('all', function () {
+              this.render();
+            }, this);
+          }
         });
       });
