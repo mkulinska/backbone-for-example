@@ -9,9 +9,9 @@ define(["jquery", "backbone", "models/list-item"], function (jq, Backbone, Model
 
       jq.getJSON('js/collection.json')
       .done(function (data) {
-        debugger;
 
-        col.add(data);
+        col.reset(data);
+
       })
       .fail(function () {
 
