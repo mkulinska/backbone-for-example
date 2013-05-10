@@ -1,11 +1,11 @@
-define(["marionette", "collections/list", "views/list-item"],
-      function (Marionette, Collection, ItemView){
+define(["marionette", "collections/list", "views/list-item", "text!../templates/list.html"],
+      function (Marionette, Collection, ItemView, template){
         'use strict';
         return Marionette.CompositeView.extend({
 
           // template : function () { return "<ul></ul>"},
 
-          template : function () { return ""},
+          template : _.template(template),
 
           tagName: 'ul',
 
@@ -21,6 +21,7 @@ define(["marionette", "collections/list", "views/list-item"],
 
           initialize: function () {
             this.collection.on('all', function () {
+                console.log('render', this, arguments);
               this.render();
             }, this);
           }
