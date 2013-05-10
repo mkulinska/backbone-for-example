@@ -1,4 +1,4 @@
-define(["marionette", "collections/list", "views/list-item", "text!../templates/list.html"],
+define(["marionette", "collections/list", "views/list-item", "text!tpl/list.html"],
       function (Marionette, Collection, ItemView, template){
         'use strict';
         return Marionette.CompositeView.extend({

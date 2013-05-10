@@ -10,6 +10,7 @@
             backbone   : 'libs/backbone',
             marionette : 'libs/backbone.marionette',
             jquery     : 'libs/jquery',
+		text	: 'libs/text',
             tpl        : '../templates'
         },
 	    shim: {
