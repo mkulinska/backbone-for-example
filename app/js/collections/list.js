@@ -5,22 +5,19 @@ define(["jquery", "backbone", "models/list-item"], function (jq, Backbone, Model
     fetch: function () {
       console.log('inner fetch', this, arguments);
 
-      var col = this;
+      var that = this;
 
       jq.getJSON('js/collection.json')
       .done(function (data) {
-
-        col.reset(data);
-
+        setTimeout(function () {
+          that.reset(data);
+        }, 3000);
       })
       .fail(function () {
 
         console.log("json error:",this, arguments);
 
       });
-    },
-    initialize: function () {
-      this.fetch();
     }
   });
 

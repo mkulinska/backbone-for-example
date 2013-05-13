@@ -1,4 +1,4 @@
-define(['marionette', 'text!tpl/list-item.html'], function (Marionette, template) {
+define(['underscore', 'marionette', 'text!tpl/list-item.html'], function (_, Marionette, template) {
   'use strict';
 
   return Marionette.CompositeView.extend({
