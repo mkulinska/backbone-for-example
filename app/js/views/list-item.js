@@ -1,13 +1,11 @@
-define(['marionette'], function (Marionette) {
+define(['marionette', 'text!tpl/list-item.html'], function (Marionette, template) {
   'use strict';
 
   return Marionette.CompositeView.extend({
     tagName : 'li',
 
 
-    template: function (model) {
-      return "subtitle: " + model.subtitle + " title: " + model.title + " nasz rand: " + model.rand ;
-    },
+    template: _.template(template),
 
     events: {
       click: 'alert'
@@ -16,6 +14,8 @@ define(['marionette'], function (Marionette) {
 
 
     alert: function () {
+	console.log(this.template.toString());
+	this.template(this.model);
       alert(this.model.get('rand')) ;
 
     }
