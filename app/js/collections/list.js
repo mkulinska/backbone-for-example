@@ -11,7 +11,7 @@ define(["jquery", "backbone", "models/list-item"], function (jq, Backbone, Model
       .done(function (data) {
         setTimeout(function () {
           that.reset(data);
-        }, 3000);
+        }, 500);
       })
       .fail(function () {
 

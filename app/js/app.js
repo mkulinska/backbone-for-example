@@ -1,6 +1,6 @@
 
-define(["marionette", "views/list", "collections/list", "views/preloader"],
-       function ( Marionette, List, Collection, Preloader) {
+define(["marionette", "views/list", "collections/list", "views/preloader", "vent", "views/addRecord"],
+       function ( Marionette, List, Collection, Preloader, vent, AddRecord) {
 
          "use strict";
 
@@ -12,11 +12,22 @@ define(["marionette", "views/list", "collections/list", "views/preloader"],
 
          app.addInitializer(function(){
            app.region_list.show(new Preloader);
-           collection.fetch()
          });
 
-         collection.on("reset", function () {
-           app.region_list.show(new List({collection: collection}));
+         vent.on("show:main", function () {
+
+           app.region_list.show(new Preloader);
+
+           collection.fetch()
+
+           collection.on("reset", function () {
+             app.region_list.show(new List({collection: collection}));
+           });
+
+         });
+
+         vent.on("show:addRecord", function () {
+           app.region_list.show(new AddRecord);
          });
 
 
