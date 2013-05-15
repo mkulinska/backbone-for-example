@@ -14,9 +14,7 @@ define(["jquery", "backbone", "models/list-item"], function (jq, Backbone, Model
         }, 500);
       })
       .fail(function () {
-
         console.log("json error:",this, arguments);
-
       });
     }
   });
