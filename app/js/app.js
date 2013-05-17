@@ -1,6 +1,6 @@
 
-define(["marionette", "views/list", "collections/list", "views/preloader", "vent", "views/addRecord"],
-       function ( Marionette, List, Collection, Preloader, vent, AddRecord) {
+define(["marionette", "views/composit_list", "collections/list", "views/preloader", "vent", "views/addRecord"],
+       function ( Marionette, CompositeList, Collection, Preloader, vent, AddRecord) {
 
          "use strict";
 
@@ -12,13 +12,8 @@ define(["marionette", "views/list", "collections/list", "views/preloader", "vent
 
          app.addRegions({ "region_list": "#root"});
 
-         // app.addInitializer(function(){
-         //   //app.region_list.show(new Preloader);
-         //   app.trigger(
-         // });
-
          vent.on("show:main", function () {
-             app.region_list.show(new List({collection: collection}));
+             app.region_list.show(new CompositeList({collection: collection}));
          });
 
          vent.on("show:addRecord", function () {

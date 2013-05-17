@@ -9,7 +9,7 @@ define(['vent'], function (vent) {
 
     showRecord: function(recordId) {
       console.log('showRecord', this, arguments );
-      vent.trigger('show:showRecord', recordId);
+      vent.trigger('show:details', recordId);
     },
 
     add: function () {
