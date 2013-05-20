@@ -12,8 +12,11 @@ define(["marionette", "views/composit_list", "collections/list", "views/preloade
 
          app.addRegions({ "region_list": "#root"});
 
-         vent.on("show:main", function () {
+         vent.on("show:main show:details", function () {
+           if(!(app.region_list.currentView instanceof CompositeList)) {
              app.region_list.show(new CompositeList({collection: collection}));
+           }
+           console.log('too late');
          });
 
          vent.on("show:addRecord", function () {

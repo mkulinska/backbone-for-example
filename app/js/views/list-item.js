@@ -13,7 +13,7 @@ define(['underscore', 'marionette', 'text!tpl/list-item.html'], function (_, Mar
     },
 
     showDetails: function () {
-      document.location.hash = '/details/'+this.model.get('rand');
+      document.location.hash = '/details/'+this.model.get('id');
     }
 
 
