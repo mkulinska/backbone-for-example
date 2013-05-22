@@ -10,8 +10,9 @@ define(["underscore", "marionette", "views/list", "views/details", "text!tpl/com
             details: '#details'
           },
 
-          initialize: function () {
-            console.log('composit_list ready');
+          initialize: function (options) {
+              console.log('composit_list ready', this, arguments);
+            this.recordId = options.recordId;
             vent.on('show:details', function (recordId) {
               this.recordId = recordId;
               this.trigger('showDetails', recordId);
@@ -21,12 +22,16 @@ define(["underscore", "marionette", "views/list", "views/details", "text!tpl/com
 
           detailsHandler: function () {
             if(typeof this.recordId !== "undefined") {
-              this.showDetails(this.recordId);
+                var that = this;
 
-              this.collection.once('reset', function () {
-                this.showDetails(this.recordId);
-              }, this);
+                console.log('wait for this');
 
+                this.collection.initPromise.done(function () {
+                    that.showDetails(that.recordId);
+                });
+
+            } else {
+                console.log('it looks like there is no recordId', this.recordId);
             }
 
             this.on('showDetails', this.showDetails);
@@ -39,6 +44,10 @@ define(["underscore", "marionette", "views/list", "views/details", "text!tpl/com
           },
 
           showDetails: function (recordId) {
+
+            console.log('show details', recordId);
+
+
             var models = this.collection.where({id: parseInt(recordId)});
             if(models.length) {
               this.details.show(new Details({model: models[0]}));
