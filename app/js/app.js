@@ -1,20 +1,30 @@
 
-define(["marionette", "views/list"],
-       function ( Marionette, List) {
+define(["marionette", "views/composit_list", "collections/list", "views/preloader", "vent", "views/addRecord"],
+       function ( Marionette, CompositeList, Collection, Preloader, vent, AddRecord) {
 
          "use strict";
 
 
 	     var app = new Marionette.Application();
+         var collection = new Collection();
+
+         collection.fetch();
 
          app.addRegions({ "region_list": "#root"});
 
-         app.addInitializer(function(){
-           this.region_list.show(new List);
+         vent.on("show:main show:details", function (recordId) {
+           if(!(app.region_list.currentView instanceof CompositeList)) {
+             app.region_list.show(new CompositeList({collection: collection, recordId: recordId}));
+           }
+           console.log('too late');
+         });
+
+         vent.on("show:addRecord", function () {
+           app.region_list.show(new AddRecord({collection: collection}));
          });
 
 
 	     return app;
 
        });
-// 
+//

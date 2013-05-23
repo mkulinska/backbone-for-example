@@ -17,7 +17,7 @@ define(["marionette", "collections/list", "views/list-item", "text!tpl/list.html
 
           //itemViewContainer: this.$el,
 
-          collection: new Collection (),
+          //collection: new Collection (),
 
           initialize: function () {
             this.collection.on('all', function () {

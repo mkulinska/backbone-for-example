@@ -37,11 +37,11 @@
 
     app.start();
 
-    //new Router({
-    //  controller : Controller
-    //});
+    new Router({
+     controller : Controller
+    });
 
-    //Backbone.history.start();
+    Backbone.history.start();
 
   });
 
