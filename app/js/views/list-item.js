@@ -1,4 +1,4 @@
-define(['marionette', 'text!tpl/list-item.html'], function (Marionette, template) {
+define(['underscore', 'marionette', 'text!tpl/list-item.html'], function (_, Marionette, template) {
   'use strict';
 
   return Marionette.CompositeView.extend({
@@ -8,16 +8,12 @@ define(['marionette', 'text!tpl/list-item.html'], function (Marionette, template
     template: _.template(template),
 
     events: {
-      click: 'alert'
+      click: 'showDetails'
 
     },
 
-
-    alert: function () {
-	console.log(this.template.toString());
-	this.template(this.model);
-      alert(this.model.get('rand')) ;
-
+    showDetails: function () {
+      document.location.hash = '/details/'+this.model.get('id');
     }
 
 
